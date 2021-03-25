@@ -1,0 +1,20 @@
+from random import  *
+
+bel=["Head","Tail"]
+die=[]
+for i in range(100000):
+    die.append(choice(bel))
+# print(die[0:30])
+h=0
+t=0
+try:
+    for i in range(100000):
+        if "Head" == die[i] and die[i] == die[i + 1] == die[i + 2] == die[i + 3] == die[i + 4] == die[i + 5]:
+            h += 1
+        elif "Head" == die[i] and die[i] == die[i + 1] == die[i + 2] == die[i + 3] == die[i + 4] == die[i + 5]:
+            t += 1
+    numberOfStreaks = t + h
+    print('Chance of streak: %s%%' % (numberOfStreaks / 100))
+
+except Exception as e:
+    print("There's no streak")
